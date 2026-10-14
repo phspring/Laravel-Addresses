@@ -93,7 +93,7 @@ class Contact extends Model
             if ($model->getConnection()
                       ->getSchemaBuilder()
                       ->hasColumn($model->getTable(), 'uuid'))
-                $model->uuid = \Webpatser\Uuid\Uuid::generate()->string;
+                $model->uuid = (string) \Illuminate\Support\Str::uuid();
         });
     }
 
